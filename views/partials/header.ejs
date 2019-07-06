@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelp camp</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+		<link rel="stylesheet" href="/stylesheets/main.css">
+	</head>
+	<body>
+		
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/"><i class="fas fa-campground"></i>YelpCamp</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<!-- <div class="nav navbar-nav">
+					<li><a href="/campgrounds">All Campgrounds</a></li>
+				</div> -->
+				<ul class ="nav navbar-nav navbar-right">
+					<% if(!currentUser) { %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">SignUp</a></li>
+					<% }else{ %>
+						<li><a href="#">Signed in as - <%= currentUser.username %></a></li>
+						<li><a href="/logout">Logout</a></li>
+					<% } %>
+				</ul>
+			</div>
+		</div>
+	</nav>
+		
+	<div class="container">
+		<% if(error && error.length > 0){ %>
+			<div class="alert alert-danger">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if(success && success.length > 0){ %>
+			<div class="alert alert-success">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>	
+	
+	
