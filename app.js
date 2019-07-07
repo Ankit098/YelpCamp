@@ -9,7 +9,8 @@ var express 	   = require("express"),
 	User           = require("./models/user"),
 	Comment        = require("./models/comment"),
 	flash          = require("connect-flash"),
-	methodOverride = require("method-override") ;
+	methodOverride = require("method-override"),
+	PORT           = process.env.PORT || 3000;
 
 var campgroundRoutes  = require("./routes/campgrounds"),
 	commentRoutes     = require("./routes/comments"),
@@ -49,6 +50,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
-app.listen(3000, function(){
-	console.log(" YelpCamp Server on");
+app.listen(PORT, function(){
+	console.log(`Yelp Camp serving on ${PORT}`);
 });
