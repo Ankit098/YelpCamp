@@ -1,7 +1,7 @@
 var express 	   = require("express"),
- 	app 	       = express(),
- 	bodyParser     = require("body-parser"),
- 	mongoose 	   = require("mongoose"),
+	app 	       = express(),
+	bodyParser     = require("body-parser"),
+	mongoose 	   = require("mongoose"),
 	Campground     = require("./models/campground"),
 	seedDB         = require("./seeds"),
 	passport       = require("passport"),
@@ -18,7 +18,8 @@ var campgroundRoutes  = require("./routes/campgrounds"),
 
 mongoose.connect(process.env.DATABASEURL,{
 	useNewUrlParser : true,
-	useCreateIndex : true
+	useCreateIndex : true,
+	useFindAndModify : false
 }).then(()=>{
 	console.log("Connected to DB");
 }).catch(err =>{
