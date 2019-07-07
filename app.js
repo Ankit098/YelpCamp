@@ -10,7 +10,7 @@ var express 	   = require("express"),
 	Comment        = require("./models/comment"),
 	flash          = require("connect-flash"),
 	methodOverride = require("method-override"),
-	PORT           = process.env.PORT || 3000;
+	PORT           = process.env.PORT || 5000;
 
 var campgroundRoutes  = require("./routes/campgrounds"),
 	commentRoutes     = require("./routes/comments"),
